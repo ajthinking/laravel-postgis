@@ -1,5 +1,5 @@
 {
-  "name": "mstaack/laravel-postgis",
+  "name": "ajthinking/laravel-postgis",
   "description": "Postgis extensions for laravel. Aims to make it easy to work with geometries from laravel models",
   "require": {
     "php": ">=7.1",
@@ -15,12 +15,12 @@
   },
   "autoload": {
     "psr-4": {
-      "MStaack\\LaravelPostgis\\": "src/"
+      "Ajthinking\\LaravelPostgis\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "MStaack\\LaravelPostgis\\Tests\\": "tests/"
+      "Ajthinking\\LaravelPostgis\\Tests\\": "tests/"
     }
   },
   "license": "MIT",
@@ -41,7 +41,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "MStaack\\LaravelPostgis\\DatabaseServiceProvider"
+        "Ajthinking\\LaravelPostgis\\DatabaseServiceProvider"
       ]
     }
   },

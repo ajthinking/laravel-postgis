@@ -1,14 +1,14 @@
 <?php
 
-namespace MStaack\LaravelPostgis\Tests\Schema\Grammars;
+namespace Ajthinking\LaravelPostgis\Tests\Schema\Grammars;
 
 use Illuminate\Database\Connection;
 use Mockery;
-use MStaack\LaravelPostgis\Exceptions\UnsupportedGeomtypeException;
-use MStaack\LaravelPostgis\PostgisConnection;
-use MStaack\LaravelPostgis\Schema\Blueprint;
-use MStaack\LaravelPostgis\Schema\Grammars\PostgisGrammar;
-use MStaack\LaravelPostgis\Tests\BaseTestCase;
+use Ajthinking\LaravelPostgis\Exceptions\UnsupportedGeomtypeException;
+use Ajthinking\LaravelPostgis\PostgisConnection;
+use Ajthinking\LaravelPostgis\Schema\Blueprint;
+use Ajthinking\LaravelPostgis\Schema\Grammars\PostgisGrammar;
+use Ajthinking\LaravelPostgis\Tests\BaseTestCase;
 
 class PostgisGrammarTest extends BaseTestCase
 {

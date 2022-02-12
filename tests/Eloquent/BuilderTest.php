@@ -1,17 +1,17 @@
 <?php
 
-namespace MStaack\LaravelPostgis\Tests\Eloquent;
+namespace Ajthinking\LaravelPostgis\Tests\Eloquent;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Query\Expression;
 use Mockery as m;
-use MStaack\LaravelPostgis\Eloquent\Builder;
-use MStaack\LaravelPostgis\Eloquent\PostgisTrait;
-use MStaack\LaravelPostgis\Geometries\LineString;
-use MStaack\LaravelPostgis\Geometries\Point;
-use MStaack\LaravelPostgis\Geometries\Polygon;
-use MStaack\LaravelPostgis\Tests\BaseTestCase;
+use Ajthinking\LaravelPostgis\Eloquent\Builder;
+use Ajthinking\LaravelPostgis\Eloquent\PostgisTrait;
+use Ajthinking\LaravelPostgis\Geometries\LineString;
+use Ajthinking\LaravelPostgis\Geometries\Point;
+use Ajthinking\LaravelPostgis\Geometries\Polygon;
+use Ajthinking\LaravelPostgis\Tests\BaseTestCase;
 
 class BuilderTest extends BaseTestCase
 {

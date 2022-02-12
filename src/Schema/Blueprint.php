@@ -1,4 +1,4 @@
-<?php namespace MStaack\LaravelPostgis\Schema;
+<?php namespace Ajthinking\LaravelPostgis\Schema;
 
 class Blueprint extends \Bosnadev\Database\Schema\Blueprint
 {

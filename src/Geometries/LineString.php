@@ -1,6 +1,6 @@
 <?php
 
-namespace MStaack\LaravelPostgis\Geometries;
+namespace Ajthinking\LaravelPostgis\Geometries;
 
 class LineString extends PointCollection implements GeometryInterface
 {
