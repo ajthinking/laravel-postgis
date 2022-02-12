@@ -9,6 +9,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use InvalidArgumentException;
 use IteratorAggregate;
 use JsonSerializable;
+use Traversable;
 
 abstract class PointCollection implements IteratorAggregate, Arrayable, ArrayAccess, Countable, JsonSerializable
 {
@@ -46,7 +47,7 @@ abstract class PointCollection implements IteratorAggregate, Arrayable, ArrayAcc
         return $this->points;
     }
 
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new ArrayIterator($this->points);
     }
@@ -102,7 +103,7 @@ abstract class PointCollection implements IteratorAggregate, Arrayable, ArrayAcc
         unset($this->points[$offset]);
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->points);
     }

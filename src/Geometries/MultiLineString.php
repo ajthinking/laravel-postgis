@@ -68,7 +68,7 @@ class MultiLineString extends Geometry implements Countable
         }, $this->getLineStrings()));
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->linestrings);
     }
@@ -78,7 +78,7 @@ class MultiLineString extends Geometry implements Countable
      *
      * @return \GeoJson\Geometry\MultiLineString
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $linestrings = [];
 
