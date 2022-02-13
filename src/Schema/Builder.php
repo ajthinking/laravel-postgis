@@ -1,4 +1,6 @@
-<?php namespace MStaack\LaravelPostgis\Schema;
+<?php
+
+namespace MStaack\LaravelPostgis\Schema;
 
 use Closure;
 

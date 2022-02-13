@@ -1,4 +1,6 @@
-<?php namespace MStaack\LaravelPostgis\Connectors;
+<?php
+
+namespace MStaack\LaravelPostgis\Connectors;
 
 use Illuminate\Database\Connection;
 use PDO;

@@ -1,4 +1,6 @@
-<?php namespace MStaack\LaravelPostgis\Schema\Grammars;
+<?php
+
+namespace MStaack\LaravelPostgis\Schema\Grammars;
 
 use Illuminate\Support\Fluent;
 use MStaack\LaravelPostgis\Schema\Blueprint;

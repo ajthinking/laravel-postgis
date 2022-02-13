@@ -1,4 +1,6 @@
-<?php namespace MStaack\LaravelPostgis\Eloquent;
+<?php
+
+namespace MStaack\LaravelPostgis\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use MStaack\LaravelPostgis\Geometries\GeometryInterface;
