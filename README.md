@@ -1,7 +1,9 @@
 Laravel Wrapper for PostgreSQL's Geo-Extension Postgis
 ======================================================
 
-![Build Status](https://github.com/mstaack/laravel-postgis/workflows/Test%20Suite/badge.svg)
+![Build Status](https://github.com/ajthinking/laravel-postgis/workflows/Test%20Suite/badge.svg)
+
+For Laravel 9+, PHP 8+ only
 
 ## Features
 
@@ -15,39 +17,13 @@ $model->myPoint = new Point(1,2);  //lat, long
 $table->polygon('myColumn');
 ```
 
-## Warning
-This Package has been moved to a new owner and aims for Laravel 6/7/8  and PHP 7 support only soon!
 
-Replace all your references to the new namespace:
-```
-Ajthinking\LaravelPostgis
-```
-
-Thanks to :
-- https://github.com/njbarrett
-- https://github.com/phaza
-- https://github.com/mirzap
-
-Fluent in Laravel Packages and Postgres/Postgis? Consider contributing! We are looking for anyone that wants to help out!
 
 ## Installation
-- Use 3.* for Laravel 5
-
-```bash
-composer require "mstaack/laravel-postgis:3.*"
-```
-
-- Use 5.* for Laravel 6/7/8
 ```bash
 composer require mstaack/laravel-postgis
 ```
 
-For laravel >=5.5 that's all. This package supports Laravel new [Package Discovery](https://laravel.com/docs/5.5/packages#package-discovery).
-
-If you are using Laravel < 5.5, you also need to add the DatabaseServiceProvider to your `config/app.php` file.
-```php
-'Ajthinking\LaravelPostgis\DatabaseServiceProvider',
-```
 ## Usage
 
 To start, ensure you have PostGIS enabled in your database - you can do this in a Laravel migration or manually via SQL.
@@ -233,3 +209,11 @@ Available geometry classes:
  * Polygon
  * MultiPolygon
  * GeometryCollection
+
+
+### Achnowledgements
+This is a fork from the work of great people. Thanks to :
+- https://github.com/njbarrett
+- https://github.com/phaza
+- https://github.com/mirzap
+
