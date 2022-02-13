@@ -280,7 +280,7 @@ class PostgisGrammar extends PostgresGrammar
     /**
      * Compile a gin index key command.
      *
-     * @param  \Bosnadev\Database\Schema\Blueprint  $blueprint
+     * @param  \MStaack\LaravelPostgis\Schema\Blueprint  $blueprint
      * @param  \Illuminate\Support\Fluent  $command
      * @return string
      */
@@ -294,7 +294,7 @@ class PostgisGrammar extends PostgresGrammar
     /**
      * Compile a gist index key command.
      *
-     * @param  \Bosnadev\Database\Schema\Blueprint  $blueprint
+     * @param  \MStaack\LaravelPostgis\Schema\Blueprint  $blueprint
      * @param  \Illuminate\Support\Fluent  $command
      * @return string
      */

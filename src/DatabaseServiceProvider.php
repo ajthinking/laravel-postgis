@@ -2,11 +2,11 @@
 
 namespace MStaack\LaravelPostgis;
 
-use Bosnadev\Database\DatabaseServiceProvider as PostgresDatabaseServiceProvider;
+use Illuminate\Database\DatabaseServiceProvider as IlluminateDatabaseServiceProvider;
 use Illuminate\Database\DatabaseManager;
 use MStaack\LaravelPostgis\Connectors\ConnectionFactory;
 
-class DatabaseServiceProvider extends PostgresDatabaseServiceProvider
+class DatabaseServiceProvider extends IlluminateDatabaseServiceProvider
 {
     public function boot()
     {
