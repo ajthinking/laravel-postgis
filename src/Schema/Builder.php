@@ -1,6 +1,6 @@
 <?php
 
-namespace MStaack\LaravelPostgis\Schema;
+namespace Ajthinking\LaravelPostgis\Schema;
 
 use Closure;
 use \Illuminate\Database\Schema\PostgresBuilder as IlluminatePostgresBuilder;

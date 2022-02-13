@@ -1,6 +1,6 @@
 <?php
 
-namespace MStaack\LaravelPostgis\Schema;
+namespace Ajthinking\LaravelPostgis\Schema;
 
 use Illuminate\Database\Schema\Blueprint as IlluminateBlueprint;
 

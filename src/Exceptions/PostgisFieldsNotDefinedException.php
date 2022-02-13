@@ -1,6 +1,6 @@
 <?php
 
-namespace MStaack\LaravelPostgis\Exceptions;
+namespace Ajthinking\LaravelPostgis\Exceptions;
 
 use RuntimeException;
 

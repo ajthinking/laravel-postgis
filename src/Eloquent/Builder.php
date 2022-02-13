@@ -1,9 +1,9 @@
 <?php
 
-namespace MStaack\LaravelPostgis\Eloquent;
+namespace Ajthinking\LaravelPostgis\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
-use MStaack\LaravelPostgis\Geometries\GeometryInterface;
+use Ajthinking\LaravelPostgis\Geometries\GeometryInterface;
 
 class Builder extends EloquentBuilder
 {
