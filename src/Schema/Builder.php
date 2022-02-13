@@ -1,9 +1,12 @@
-<?php namespace MStaack\LaravelPostgis\Schema;
+<?php
+
+namespace Ajthinking\LaravelPostgis\Schema;
 
 use Closure;
+use \Illuminate\Database\Schema\PostgresBuilder as IlluminatePostgresBuilder;
 
-class Builder extends \Bosnadev\Database\Schema\Builder
-{
+class Builder extends IlluminatePostgresBuilder
+{	
     /**
      * Create a new command set with a Closure.
      *

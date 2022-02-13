@@ -1,10 +1,10 @@
 <?php
 
-namespace MStaack\LaravelPostgis\Tests\Geometries;
+namespace Ajthinking\LaravelPostgis\Tests\Geometries;
 
-use MStaack\LaravelPostgis\Geometries\LineString;
-use MStaack\LaravelPostgis\Geometries\Point;
-use MStaack\LaravelPostgis\Tests\BaseTestCase;
+use Ajthinking\LaravelPostgis\Geometries\LineString;
+use Ajthinking\LaravelPostgis\Geometries\Point;
+use Ajthinking\LaravelPostgis\Tests\BaseTestCase;
 
 class LineStringTest extends BaseTestCase
 {

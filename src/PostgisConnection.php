@@ -1,12 +1,22 @@
 <?php
 
-namespace MStaack\LaravelPostgis;
+namespace Ajthinking\LaravelPostgis;
 
-use Bosnadev\Database\PostgresConnection;
-use MStaack\LaravelPostgis\Schema\Grammars\PostgisGrammar;
+use Illuminate\Database\PostgresConnection;
+use Ajthinking\LaravelPostgis\Schema\Grammars\PostgisGrammar;
 
 class PostgisConnection extends PostgresConnection
 {
+    /**
+     * Get the default post processor instance.
+     *
+     * @return \Illuminate\Database\Query\Processors\PostgresProcessor
+     */
+    protected function getDefaultPostProcessor()
+    {
+        return new \Illuminate\Database\Query\Processors\PostgresProcessor;
+    }
+	
     /**
      * Get the default schema grammar instance.
      *

@@ -20,7 +20,7 @@ This Package has been moved to a new owner and aims for Laravel 6/7/8  and PHP 7
 
 Replace all your references to the new namespace:
 ```
-MStaack\LaravelPostgis
+Ajthinking\LaravelPostgis
 ```
 
 Thanks to :
@@ -46,7 +46,7 @@ For laravel >=5.5 that's all. This package supports Laravel new [Package Discove
 
 If you are using Laravel < 5.5, you also need to add the DatabaseServiceProvider to your `config/app.php` file.
 ```php
-'MStaack\LaravelPostgis\DatabaseServiceProvider',
+'Ajthinking\LaravelPostgis\DatabaseServiceProvider',
 ```
 ## Usage
 
@@ -57,7 +57,7 @@ To start, ensure you have PostGIS enabled in your database - you can do this in 
 You need to publish the migration to easily enable PostGIS:
 
 ```sh
-php artisan vendor:publish --provider="MStaack\LaravelPostgis\DatabaseServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Ajthinking\LaravelPostgis\DatabaseServiceProvider" --tag="migrations"
 ```
 
 And then you run the migrations:
@@ -94,7 +94,7 @@ Open the created migrations with your editor.
 
 ```PHP
 use Illuminate\Database\Migrations\Migration;
-use MStaack\LaravelPostgis\Schema\Blueprint;
+use Ajthinking\LaravelPostgis\Schema\Blueprint;
 
 class CreateLocationsTable extends Migration {
 
@@ -156,8 +156,8 @@ what attributes/columns on your model are to be considered geometry objects. By 
 
 ```PHP
 use Illuminate\Database\Eloquent\Model;
-use MStaack\LaravelPostgis\Eloquent\PostgisTrait;
-use MStaack\LaravelPostgis\Geometries\Point;
+use Ajthinking\LaravelPostgis\Eloquent\PostgisTrait;
+use Ajthinking\LaravelPostgis\Geometries\Point;
 
 class Location extends Model
 {
