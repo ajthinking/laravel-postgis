@@ -212,7 +212,7 @@ Available geometry classes:
 
 
 ### Achnowledgements
-This is a fork from the work of great people. Thanks to :
+This is a [fork](https://github.com/mstaack/laravel-postgis) from the work of great people. Thanks to :
 - https://github.com/njbarrett
 - https://github.com/phaza
 - https://github.com/mirzap
