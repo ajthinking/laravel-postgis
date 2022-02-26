@@ -78,7 +78,7 @@ class MultiLineString extends Geometry implements Countable
      *
      * @return \GeoJson\Geometry\MultiLineString
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $linestrings = [];
 

@@ -121,7 +121,7 @@ class MultiPolygon extends Geometry implements Countable
      *
      * @return \GeoJson\Geometry\MultiPolygon
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $polygons = [];
         foreach ($this->polygons as $polygon) {
