@@ -17,6 +17,7 @@ class MultiLineStringTest extends BaseTestCase
 
         $this->assertInstanceOf(MultiLineString::class, $multilinestring);
         $this->assertEquals(2, $multilinestring->count());
+        $this->assertEquals($geojson, $multilinestring->jsonSerialize());
     }
 
     public function testFromGeoJSON3d()
@@ -27,6 +28,7 @@ class MultiLineStringTest extends BaseTestCase
 
         $this->assertInstanceOf(MultiLineString::class, $multilinestring);
         $this->assertEquals(2, $multilinestring->count());
+        $this->assertEquals($geojson, $multilinestring->jsonSerialize());
     }
 
     public function testFromWKT()

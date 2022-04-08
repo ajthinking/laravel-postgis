@@ -16,6 +16,7 @@ class PointTest extends BaseTestCase
         $this->assertInstanceOf(Point::class, $point);
         $this->assertEquals(2, $point->getLat());
         $this->assertEquals(1, $point->getLng());
+        $this->assertEquals($geojson, $point->jsonSerialize());
     }
 
     public function testFromGeoJSON3d()
@@ -28,6 +29,7 @@ class PointTest extends BaseTestCase
         $this->assertEquals(2, $point->getLat());
         $this->assertEquals(1, $point->getLng());
         $this->assertEquals(3, $point->getAlt());
+        $this->assertEquals($geojson, $point->jsonSerialize());
     }
 
     public function testFromWKT()
