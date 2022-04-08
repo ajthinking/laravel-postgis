@@ -57,7 +57,7 @@ class MultiPoint extends PointCollection implements GeometryInterface, \JsonSeri
         return new static($points);
     }
 
-    public static function fromGeoJSON(\GeoJson\Geometry\MultiPoint $geojson)
+    public static function fromGeoJSON($geojson)
     {
         $coordinates = $geojson->getCoordinates();
 
