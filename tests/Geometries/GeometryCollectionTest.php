@@ -46,6 +46,35 @@ class GeometryCollectionTest extends BaseTestCase
         $this->collection3d = new GeometryCollection([$collection, $point]);
     }
 
+    public function testFromGeoJSON()
+    {
+        $geojson = new \GeoJson\Geometry\GeometryCollection([
+            new \GeoJson\Geometry\Point([2, 3]),
+            new \GeoJson\Geometry\LineString([[2, 3], [3, 4]]),
+        ]);
+
+        $geometryCollection = GeometryCollection::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(GeometryCollection::class, $geometryCollection);
+        $this->assertEquals(2, $geometryCollection->count());
+        $this->assertInstanceOf(Point::class, $geometryCollection->getGeometries()[0]);
+        $this->assertInstanceOf(LineString::class, $geometryCollection->getGeometries()[1]);
+    }
+
+    public function testFromGeoJSON3d()
+    {
+        $geojson = new \GeoJson\Geometry\GeometryCollection([
+            new \GeoJson\Geometry\Point([2, 3, 4]),
+            new \GeoJson\Geometry\LineString([[2, 3, 4], [3, 4, 5]]),
+        ]);
+
+        $geometryCollection = GeometryCollection::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(GeometryCollection::class, $geometryCollection);
+        $this->assertEquals(2, $geometryCollection->count());
+        $this->assertInstanceOf(Point::class, $geometryCollection->getGeometries()[0]);
+        $this->assertInstanceOf(LineString::class, $geometryCollection->getGeometries()[1]);
+    }
 
     public function testFromWKT()
     {

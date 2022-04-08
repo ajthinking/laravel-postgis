@@ -69,6 +69,23 @@ class GeometryCollection extends Geometry implements Countable
         );
     }
 
+    public static function fromGeoJSON($geojson)
+    {
+        $geometries = $geojson->getGeometries();
+
+        return new static(
+            array_map(
+                function ($geometry) {
+                    $type = $geometry->getType();
+
+                    return call_user_func('\Ajthinking\LaravelPostgis\Geometries\\' . $type . '::fromGeoJSON', $geometry);
+
+                },
+                $geometries
+            )
+        );
+    }
+
     public function count()
     {
         return count($this->geometries);
