@@ -61,6 +61,21 @@ class MultiLineString extends Geometry implements Countable
         return new static($linestrings);
     }
 
+    public static function fromGeoJSON($geojson)
+    {
+        $coordinates = $geojson->getCoordinates();
+
+        $linestrings = array_map(function ($line) {
+            $points = array_map(function ($coord) {
+                return new Point((float)$coord[1], (float)$coord[0], isset($coord[2]) ? (float)$coord[2] : null);
+            }, $line);
+
+            return new LineString($points);
+        }, $coordinates);
+
+        return new static($linestrings);
+    }
+
     public function __toString()
     {
         return implode(',', array_map(function (LineString $linestring) {

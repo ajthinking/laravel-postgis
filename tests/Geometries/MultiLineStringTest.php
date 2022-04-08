@@ -9,6 +9,26 @@ use Ajthinking\LaravelPostgis\Tests\BaseTestCase;
 
 class MultiLineStringTest extends BaseTestCase
 {
+    public function testFromGeoJSON()
+    {
+        $geojson = new \GeoJson\Geometry\MultiLineString([[[1, 1], [2, 2], [2, 3]], [[3, 4], [4, 3], [6, 5]]]);
+
+        $multilinestring = MultiLineString::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(MultiLineString::class, $multilinestring);
+        $this->assertEquals(2, $multilinestring->count());
+    }
+
+    public function testFromGeoJSON3d()
+    {
+        $geojson = new \GeoJson\Geometry\MultiLineString([[[1, 1, 1], [2, 2, 2], [2, 3, 4]], [[3, 4, 5], [4, 3, 2], [6, 5, 4]]]);
+
+        $multilinestring = MultiLineString::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(MultiLineString::class, $multilinestring);
+        $this->assertEquals(2, $multilinestring->count());
+    }
+
     public function testFromWKT()
     {
         $multilinestring = MultiLineString::fromWKT('MULTILINESTRING((1 1,2 2,2 3),(3 4,4 3,6 5))');
