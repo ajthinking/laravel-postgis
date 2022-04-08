@@ -90,6 +90,13 @@ class Point extends Geometry
         return static::fromPair($wktArgument);
     }
 
+    public static function fromGeoJSON($geojson)
+    {
+        $coordinates = $geojson->getCoordinates();
+
+        return new static((float)$coordinates[1], (float)$coordinates[0], isset($coordinates[2]) ? (float)$coordinates[2] : null);
+    }
+
     public function __toString()
     {
         return $this->toPair();
