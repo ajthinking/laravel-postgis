@@ -10,13 +10,13 @@ class MultiPoint extends PointCollection implements GeometryInterface, \JsonSeri
     public function __construct(array $points)
     {
         if (count($points) < 1) {
-            throw new InvalidArgumentException('$points must contain at least one entry');
+            throw new \InvalidArgumentException('$points must contain at least one entry');
         }
         $validated = array_filter($points, function ($value) {
             return $value instanceof Point;
         });
         if (count($points) !== count($validated)) {
-            throw new InvalidArgumentException('$points must be an array of Points');
+            throw new \InvalidArgumentException('$points must be an array of Points');
         }
         $this->points = $points;
     }
@@ -53,6 +53,21 @@ class MultiPoint extends PointCollection implements GeometryInterface, \JsonSeri
         $points = array_map(function ($pair) {
             return Point::fromPair($pair);
         }, $matches[1]);
+
+        return new static($points);
+    }
+
+    public static function fromGeoJSON(\GeoJson\Geometry\MultiPoint $geojson)
+    {
+        $coordinates = $geojson->getCoordinates();
+
+        if (count($coordinates) < 2) {
+            return new static([]);
+        }
+
+        $points = array_map(function ($coord) {
+            return new Point((float)$coord[1], (float)$coord[0], isset($coord[2]) ? (float)$coord[2] : null);
+        }, $coordinates);
 
         return new static($points);
     }
