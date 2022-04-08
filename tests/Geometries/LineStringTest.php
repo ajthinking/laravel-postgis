@@ -31,6 +31,26 @@ class LineStringTest extends BaseTestCase
         $this->assertEquals('LINESTRING Z(1 1 1,2 2 2,3 3 3)', $linestring->toWKT());
     }
 
+    public function testFromGeoJSON()
+    {
+        $geojson = new \GeoJson\Geometry\LineString([[1, 1], [2, 2], [3, 3]]);
+
+        $linestring = LineString::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(LineString::class, $linestring);
+        $this->assertEquals(3, $linestring->count());
+    }
+
+    public function testFromGeoJSON3d()
+    {
+        $geojson = new \GeoJson\Geometry\LineString([[1, 1, 1], [2, 2, 2], [3, 3, 3]]);
+
+        $linestring = LineString::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(LineString::class, $linestring);
+        $this->assertEquals(3, $linestring->count());
+    }
+
     public function testFromWKT()
     {
         $linestring = LineString::fromWKT('LINESTRING(1 1, 2 2,3 3)');

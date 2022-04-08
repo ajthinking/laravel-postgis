@@ -34,6 +34,17 @@ class LineString extends PointCollection implements GeometryInterface
         return new static($points);
     }
 
+    public static function fromGeoJSON($geojson)
+    {
+        $coordinates = $geojson->getCoordinates();
+
+        $points = array_map(function ($coord) {
+            return new Point((float)$coord[1], (float)$coord[0], isset($coord[2]) ? (float)$coord[2] : null);
+        }, $coordinates);
+
+        return new static($points);
+    }
+
     public function __toString()
     {
         return $this->toPairList();
