@@ -104,7 +104,7 @@ class MultiPolygonTest extends BaseTestCase
 
         $this->assertInstanceOf(MultiPolygon::class, $multipolygon);
         $this->assertEquals(2, $multipolygon->count());
-        $this->assertEquals($geojson, $multipolygon->jsonSerialize());
+        $this->assertEquals($geojson, $multipolygon->toGeoJSON());
     }
 
     public function testFromGeoJSON3d()
@@ -118,7 +118,7 @@ class MultiPolygonTest extends BaseTestCase
 
         $this->assertInstanceOf(MultiPolygon::class, $multipolygon);
         $this->assertEquals(2, $multipolygon->count());
-        $this->assertEquals($geojson, $multipolygon->jsonSerialize());
+        $this->assertEquals($geojson, $multipolygon->toGeoJSON());
     }
 
     public function testFromWKT()

@@ -16,7 +16,7 @@ class MultiPointTest extends BaseTestCase
 
         $this->assertInstanceOf(MultiPoint::class, $multipoint);
         $this->assertEquals(3, $multipoint->count());
-        $this->assertEquals($geojson, $multipoint->jsonSerialize());
+        $this->assertEquals($geojson, $multipoint->toGeoJSON());
     }
 
     public function testFromGeoJSON3d()
@@ -27,7 +27,7 @@ class MultiPointTest extends BaseTestCase
 
         $this->assertInstanceOf(MultiPoint::class, $multipoint);
         $this->assertEquals(3, $multipoint->count());
-        $this->assertEquals($geojson, $multipoint->jsonSerialize());
+        $this->assertEquals($geojson, $multipoint->toGeoJSON());
     }
 
     public function testFromWKT()

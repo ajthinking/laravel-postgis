@@ -39,7 +39,7 @@ class LineStringTest extends BaseTestCase
 
         $this->assertInstanceOf(LineString::class, $linestring);
         $this->assertEquals(3, $linestring->count());
-        $this->assertEquals($geojson, $linestring->jsonSerialize());
+        $this->assertEquals($geojson, $linestring->toGeoJSON());
     }
 
     public function testFromGeoJSON3d()
@@ -50,7 +50,7 @@ class LineStringTest extends BaseTestCase
 
         $this->assertInstanceOf(LineString::class, $linestring);
         $this->assertEquals(3, $linestring->count());
-        $this->assertEquals($geojson, $linestring->jsonSerialize());
+        $this->assertEquals($geojson, $linestring->toGeoJSON());
     }
 
     public function testFromWKT()

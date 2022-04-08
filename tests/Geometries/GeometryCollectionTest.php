@@ -59,7 +59,7 @@ class GeometryCollectionTest extends BaseTestCase
         $this->assertEquals(2, $geometryCollection->count());
         $this->assertInstanceOf(Point::class, $geometryCollection->getGeometries()[0]);
         $this->assertInstanceOf(LineString::class, $geometryCollection->getGeometries()[1]);
-        $this->assertEquals($geojson, $geometryCollection->jsonSerialize());
+        $this->assertEquals($geojson, $geometryCollection->toGeoJSON());
     }
 
     public function testFromGeoJSON3d()
@@ -75,7 +75,7 @@ class GeometryCollectionTest extends BaseTestCase
         $this->assertEquals(2, $geometryCollection->count());
         $this->assertInstanceOf(Point::class, $geometryCollection->getGeometries()[0]);
         $this->assertInstanceOf(LineString::class, $geometryCollection->getGeometries()[1]);
-        $this->assertEquals($geojson, $geometryCollection->jsonSerialize());
+        $this->assertEquals($geojson, $geometryCollection->toGeoJSON());
     }
 
     public function testFromWKT()
