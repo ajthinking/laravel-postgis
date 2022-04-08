@@ -57,6 +57,25 @@ class MultiPolygon extends Geometry implements Countable
         }, $polygons));
     }
 
+    public static function fromGeoJSON($geojson)
+    {
+        $coordinates = $geojson->getCoordinates();
+
+        $polygons = array_map(function ($polygon) {
+            $linestrings = array_map(function ($line) {
+                $points = array_map(function ($coord) {
+                    return new Point((float)$coord[1], (float)$coord[0], isset($coord[2]) ? (float)$coord[2] : null);
+                }, $line);
+
+                return new LineString($points);
+            }, $polygon);
+
+            return new Polygon($linestrings);
+        }, $coordinates);
+
+        return new static($polygons);
+    }
+
     /**
      * (PHP 5 &gt;= 5.1.0)<br/>
      * Count elements of an object
