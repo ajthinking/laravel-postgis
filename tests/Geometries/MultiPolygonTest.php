@@ -93,6 +93,34 @@ class MultiPolygonTest extends BaseTestCase
         $this->multiPolygon3d = new MultiPolygon([$polygon1, $polygon2]);
     }
 
+    public function testFromGeoJSON()
+    {
+        $geojson = new \GeoJson\Geometry\MultiPolygon([
+            [[[1, 1], [2, 1], [2, 2], [1, 2], [1, 1]], [[1, 1], [2, 1], [2, 2], [1, 2], [1, 1]]],
+            [[[-1, -1], [-2, -2], [-2, -2], [-2, -1], [-1, -1]]],
+        ]);
+
+        $multipolygon = MultiPolygon::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(MultiPolygon::class, $multipolygon);
+        $this->assertEquals(2, $multipolygon->count());
+        $this->assertEquals($geojson, $multipolygon->toGeoJSON());
+    }
+
+    public function testFromGeoJSON3d()
+    {
+        $geojson = new \GeoJson\Geometry\MultiPolygon([
+            [[[1, 1, 1], [2, 1, 3], [2, 2, 2], [1, 2, 0], [1, 1, 1]], [[1, 1, 1], [2, 1, 3], [2, 2, 2], [1, 2, 0], [1, 1, 1]]],
+            [[[-1, -1, -1], [-2, -2, -3], [-2, -2, -2], [-2, -1, 0], [-1, -1, -1]]],
+        ]);
+
+        $multipolygon = MultiPolygon::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(MultiPolygon::class, $multipolygon);
+        $this->assertEquals(2, $multipolygon->count());
+        $this->assertEquals($geojson, $multipolygon->toGeoJSON());
+    }
+
     public function testFromWKT()
     {
         $wkt = 'MULTIPOLYGON(((1 1,2 1,2 2,1 2,1 1),(1 1,2 1,2 2,1 2,1 1)),((-1 -1,-1 -2,-2 -2,-2 -1,-1 -1)))';

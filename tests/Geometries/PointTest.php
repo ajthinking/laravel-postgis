@@ -7,6 +7,31 @@ use Ajthinking\LaravelPostgis\Tests\BaseTestCase;
 
 class PointTest extends BaseTestCase
 {
+    public function testFromGeoJSON()
+    {
+        $geojson = new \GeoJson\Geometry\Point([1, 2]);
+
+        $point = Point::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(Point::class, $point);
+        $this->assertEquals(2, $point->getLat());
+        $this->assertEquals(1, $point->getLng());
+        $this->assertEquals($geojson, $point->toGeoJSON());
+    }
+
+    public function testFromGeoJSON3d()
+    {
+        $geojson = new \GeoJson\Geometry\Point([1, 2, 3]);
+
+        $point = Point::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(Point::class, $point);
+        $this->assertEquals(2, $point->getLat());
+        $this->assertEquals(1, $point->getLng());
+        $this->assertEquals(3, $point->getAlt());
+        $this->assertEquals($geojson, $point->toGeoJSON());
+    }
+
     public function testFromWKT()
     {
         $point = Point::fromWKT('POINT(1 2)');

@@ -8,6 +8,28 @@ use Ajthinking\LaravelPostgis\Tests\BaseTestCase;
 
 class MultiPointTest extends BaseTestCase
 {
+    public function testFromGeoJSON()
+    {
+        $geojson = new \GeoJson\Geometry\MultiPoint([[1, 1], [2, 1], [2, 2]]);
+
+        $multipoint = MultiPoint::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(MultiPoint::class, $multipoint);
+        $this->assertEquals(3, $multipoint->count());
+        $this->assertEquals($geojson, $multipoint->toGeoJSON());
+    }
+
+    public function testFromGeoJSON3d()
+    {
+        $geojson = new \GeoJson\Geometry\MultiPoint([[1, 1, 1], [2, 1, 3], [2, 2, 2]]);
+
+        $multipoint = MultiPoint::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(MultiPoint::class, $multipoint);
+        $this->assertEquals(3, $multipoint->count());
+        $this->assertEquals($geojson, $multipoint->toGeoJSON());
+    }
+
     public function testFromWKT()
     {
         $multipoint = MultiPoint::fromWKT('MULTIPOINT((1 1),(2 1),(2 2))');

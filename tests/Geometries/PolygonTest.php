@@ -39,6 +39,27 @@ class PolygonTest extends BaseTestCase
         $this->polygon3d = new Polygon([$collection]);
     }
 
+    public function testFromGeoJSON()
+    {
+        $geojson = new \GeoJson\Geometry\Polygon([[[1, 1], [5, 1], [5, 5], [1, 5], [1, 1]], [[2, 2], [3, 2], [3, 3], [2, 3], [2, 2]]]);
+
+        $polygon = Polygon::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(Polygon::class, $polygon);
+        $this->assertEquals(2, $polygon->count());
+        $this->assertEquals($geojson, $polygon->toGeoJSON());
+    }
+
+    public function testFromGeoJSON3d()
+    {
+        $geojson = new \GeoJson\Geometry\Polygon([[[1, 1, 1], [5, 1, 1], [5, 5, 1], [1, 5, 1], [1, 1, 1]], [[2, 2, 2], [3, 2, 2], [3, 3, 2], [2, 3, 2], [2, 2, 2]]]);
+
+        $polygon = Polygon::fromGeoJSON($geojson);
+
+        $this->assertInstanceOf(Polygon::class, $polygon);
+        $this->assertEquals(2, $polygon->count());
+        $this->assertEquals($geojson, $polygon->toGeoJSON());
+    }
 
     public function testFromWKT()
     {

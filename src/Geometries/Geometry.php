@@ -75,4 +75,11 @@ abstract class Geometry implements GeometryInterface, \JsonSerializable
 
         return static::fromString($wktArgument);
     }
+
+    public abstract static function fromGeoJSON($geojson);
+
+    public function toGeoJSON()
+    {
+        return $this->jsonSerialize();
+    }
 }
