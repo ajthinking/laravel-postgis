@@ -115,4 +115,9 @@ abstract class PointCollection implements IteratorAggregate, Arrayable, ArrayAcc
     }
 
     public abstract static function fromGeoJSON($geojson);
+
+    public function toGeoJSON()
+    {
+        return $this->jsonSerialize();
+    }
 }
