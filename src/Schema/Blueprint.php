@@ -82,7 +82,7 @@ class Blueprint extends IlluminateBlueprint
      *
      * @param  string $column
      * @param  int $length
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function character($column, $length = 255)
     {
@@ -91,7 +91,7 @@ class Blueprint extends IlluminateBlueprint
 
     /**
      * @param $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function hstore($column)
     {
@@ -102,7 +102,7 @@ class Blueprint extends IlluminateBlueprint
      * Create a new netmask (CIDR-notation) (cidr) column on the table.
      *
      * @param  string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function netmask($column)
     {
@@ -113,7 +113,7 @@ class Blueprint extends IlluminateBlueprint
      * Create a new line column on the table.
      *
      * @param  string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function line($column)
     {
@@ -124,7 +124,7 @@ class Blueprint extends IlluminateBlueprint
      * Create a new line segment (lseg) column on the table.
      *
      * @param  string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function lineSegment($column)
     {
@@ -135,7 +135,7 @@ class Blueprint extends IlluminateBlueprint
      * Create a new path column on the table.
      *
      * @param  string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function path($column)
     {
@@ -146,7 +146,7 @@ class Blueprint extends IlluminateBlueprint
      * Create a new box column on the table.
      *
      * @param  string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function box($column)
     {
@@ -157,7 +157,7 @@ class Blueprint extends IlluminateBlueprint
      * Create a new circle column on the table.
      *
      * @param  string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function circle($column)
     {
@@ -168,7 +168,7 @@ class Blueprint extends IlluminateBlueprint
      * Create a new money column on the table.
      *
      * @param  string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function money($column)
     {
@@ -180,7 +180,7 @@ class Blueprint extends IlluminateBlueprint
      *
      * @param string $column
      *
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function int4range($column)
     {
@@ -192,7 +192,7 @@ class Blueprint extends IlluminateBlueprint
      *
      * @param string $column
      *
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function int8range($column)
     {
@@ -204,7 +204,7 @@ class Blueprint extends IlluminateBlueprint
      *
      * @param string $column
      *
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function numrange($column)
     {
@@ -216,7 +216,7 @@ class Blueprint extends IlluminateBlueprint
      *
      * @param string $column
      *
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function tsrange($column)
     {
@@ -228,7 +228,7 @@ class Blueprint extends IlluminateBlueprint
      *
      * @param string $column
      *
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function tstzrange($column)
     {
@@ -240,7 +240,7 @@ class Blueprint extends IlluminateBlueprint
      *
      * @param $column
      *
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function daterange($column)
     {
@@ -252,7 +252,7 @@ class Blueprint extends IlluminateBlueprint
      *
      * @param $column
      *
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function tsvector($column)
     {
@@ -263,7 +263,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a point column on the table
      *
      * @param      $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function point($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
@@ -274,7 +274,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a multipoint column on the table
      *
      * @param      $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function multipoint($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
@@ -285,7 +285,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a polygon column on the table
      *
      * @param      $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function polygon($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
@@ -296,7 +296,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a multipolygon column on the table
      *
      * @param      $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function multipolygon($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
@@ -307,7 +307,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a multipolygonz column on the table
      *
      * @param $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function multipolygonz($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
@@ -318,7 +318,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a linestring column on the table
      *
      * @param      $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function linestring($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
@@ -329,7 +329,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a multilinestring column on the table
      *
      * @param      $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function multilinestring($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
@@ -340,7 +340,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a geography column on the table
      *
      * @param   string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function geography($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
@@ -351,7 +351,7 @@ class Blueprint extends IlluminateBlueprint
      * Add a geometry column on the table
      *
      * @param   string  $column
-     * @return \Illuminate\Support\Fluent
+     * @return \Illuminate\Database\Schema\ColumnDefinition
      */
     public function geometry($column, $geomtype = 'GEOGRAPHY', $srid = '4326')
     {
